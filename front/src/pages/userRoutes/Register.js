@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
-const Form = (props) => {
+const Register = (props) => {
 
   // states
   const [name, setName] = useState('');
@@ -37,6 +37,7 @@ const Form = (props) => {
       if (validator(name, email, password)) {
         console.log(address)
         const response = await axios.post(`${server}/auth/register`, data)
+
       } else {
         alert('fill out all blanks')
       }
@@ -61,7 +62,6 @@ const Form = (props) => {
     setContact(e.target.value);
   }
 
-  
   return (
     <div>
       <form>
@@ -88,4 +88,4 @@ const Form = (props) => {
     </div>
   );
 }
-export default Form;
+export default Register;

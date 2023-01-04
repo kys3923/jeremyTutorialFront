@@ -2,7 +2,10 @@
 import Header from './components/header.js';
 // pages
 import Landing from './pages/Landing.js';
-import Form from './pages/Form.js';
+import User from './pages/User.js';
+// import Register from './pages/userRoutes/Register.js';
+// import Update from './pages/userRoutes/Update.js';
+// import Delete from './pages/userRoutes/Delete.js';
 import Tictactoe from './pages/Tictactoe.js';
 
 // imports
@@ -14,8 +17,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/tictactoe" element={<Tictactoe />} />
+        {/* userRoutes */}
+        <Route path="user" element={<User />} />
+          {/* <Route path='register' element={<Register />} />
+          <Route path='update' element={<Update />} />
+          <Route path='delete' element={<Delete />} />
+        </Route> */}
+        
+        <Route path="tictactoe" element={<Tictactoe />} />
       </Routes>
     </Router>
   )
