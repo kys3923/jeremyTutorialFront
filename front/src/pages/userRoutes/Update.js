@@ -1,24 +1,23 @@
 import axios from 'axios';
 import { useState } from 'react'
 
+import Individual from './update/Individual';
+
 const Update = (props) => {
 
   const [ userData, setUserData ] = useState();
 
-  const boxHandler = async (e, id) => {
-    console.log(id, 'clicked id');
 
-    const request = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/view/${id}`, id)
-    console.log(request);
+  const boxHandler = async (e, id) => {
+
+    const request = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/view/${id}`, id);
+
     if (request.data.status === 'success') {
       setUserData(request.data.foundUser[0])
     }
   }
 
-  const updateAccount = (e) => {
-    e.preventDefault();
-    console.log('update button clicked')
-  }
+
 
   return (
     <>
@@ -38,12 +37,7 @@ const Update = (props) => {
       </ul>
       {
         !!userData ?
-        <div>
-          <p>username: {userData.username}</p>
-          <p>contact: {userData.contact}</p>
-          <p>email: {userData.email}</p>
-          <button onClick={(e) => updateAccount(e)}>update</button>
-        </div>
+          <Individual userData={userData}/>
         :
         null
       }

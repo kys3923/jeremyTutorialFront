@@ -12,15 +12,21 @@ const User = (props) => {
   const [ currentPage, setCurrentPage ] = useState(1);
 
   useEffect(() => {
+    let isLoading = true;
+
     const getuser = async () => {
       
-      const user = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/viewAll`);
-      if(!!user.data.user) {
-        setReceivedUserData(user.data.user);
+      if (isLoading) {
+        const user = await axios.get(`${process.env.REACT_APP_SERVER_URL}/auth/viewAll`);
+        if(!!user.data.user) {
+          setReceivedUserData(user.data.user);
+        }
       }
     }
-    getuser();
-    console.log('received Data', receivedUserData)
+    return () => {
+      getuser();
+      isLoading = false;
+    }
   },[])
 
   const links = [
@@ -56,14 +62,6 @@ const User = (props) => {
 
       {!!receivedUserData ?
         pageRenderer(currentPage)
-        // <ul>
-        //   {receivedUserData.map((user) => {
-        //     return <div key={user._id}>
-        //         <li>{user.username}</li>
-        //         <li>{user.email}</li>
-        //       </div>
-        //   })}
-        // </ul>
       :
         <p>data is not here</p>
       }
