@@ -35,7 +35,6 @@ const Register = (props) => {
     // sending Data
     const registerToAPI = async (data) => {
       if (validator(name, email, password)) {
-        console.log(address)
         const response = await axios.post(`${server}/auth/register`, data)
 
       } else {

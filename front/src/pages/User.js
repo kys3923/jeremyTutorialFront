@@ -30,7 +30,6 @@ const User = (props) => {
   },[])
 
   const links = [
-    { name: 'Register', pageNum: 1 },
     { name: 'Update', pageNum: 2 },
     { name: 'Delete', pageNum: 3 },
   ]
