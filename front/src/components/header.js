@@ -32,6 +32,8 @@ const Header = (props) => {
       <ul>
         <li><a href='/'>Home</a></li>
         <li><a href='/user'>User</a></li>
+        <li><a href='/todo'>Todo</a></li>
+        <li><a href='/todo/register'>Register Todo</a></li>
         {!isAuth ? <button onClick={loginButton}>Login</button> : <button onClick={logoutButton}>Logout</button>}
       </ul>
     </nav>
