@@ -1,0 +1,17 @@
+.todoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.todoBox {
+  width: 12em;
+  padding: 2em 2em;
+  background-color: lightcoral;
+  margin-bottom: 2em;
+}
+
+.todoBox:hover {
+  background-color: bisque;
+}
