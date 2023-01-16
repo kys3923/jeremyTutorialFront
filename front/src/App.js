@@ -34,6 +34,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="login" element={<Login />} />
         <Route path='register' element={<Register />} />
+        <Route path="tictactoe" element={<Tictactoe />} />
         
         {/* userRoutes */}
         <Route element={<ClientRoute />}>
@@ -43,7 +44,6 @@ function App() {
           <Route path='todo/register' element={<TodoRegister />} />
           <Route path='todo/:id' element={<TodoPage />} />
           
-          <Route path="tictactoe" element={<Tictactoe />} />
         </Route>
 
       </Routes>

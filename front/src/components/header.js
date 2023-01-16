@@ -33,6 +33,7 @@ const Header = (props) => {
         <li><a href='/'>Home</a></li>
         <li><a href='/user'>User</a></li>
         <li><a href='/todo'>Todo</a></li>
+        <li><a href='/tictactoe'>tictactoe</a></li>
         <li><a href='/todo/register'>Register Todo</a></li>
         {!isAuth ? <button onClick={loginButton}>Login</button> : <button onClick={logoutButton}>Logout</button>}
       </ul>
