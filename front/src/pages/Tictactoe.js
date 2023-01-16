@@ -21,26 +21,26 @@ const Tictactoe = (props) => {
   const winValidator = () => {
     console.log('checking')
     // win situation 123, 147, 159, 258, 369, 357, 456, 789
-    if ( button1 === 'O' && button2 === 'O' && button3 === 'O' ||
-      button1 === 'O' && button4 === 'O' && button7 === 'O' ||
-      button1 === 'O' && button5 === 'O' && button9 === 'O' ||
-      button2 === 'O' && button5 === 'O' && button8 === 'O' ||
-      button3 === 'O' && button6 === 'O' && button9 === 'O' ||
-      button3 === 'O' && button5 === 'O' && button7 === 'O' ||
-      button4 === 'O' && button5 === 'O' && button6 === 'O' ||
-      button7 === 'O' && button8 === 'O' && button9 === 'O'
+    if ( (button1 === 'O' && button2 === 'O' && button3 === 'O') ||
+      (button1 === 'O' && button4 === 'O' && button7 === 'O') ||
+      (button1 === 'O' && button5 === 'O' && button9 === 'O') ||
+      (button2 === 'O' && button5 === 'O' && button8 === 'O') ||
+      (button3 === 'O' && button6 === 'O' && button9 === 'O') ||
+      (button3 === 'O' && button5 === 'O' && button7 === 'O') ||
+      (button4 === 'O' && button5 === 'O' && button6 === 'O') ||
+      (button7 === 'O' && button8 === 'O' && button9 === 'O')
     ) {
       setIsGameFinished(true);
       displayTextSetter(player, isGameStarted, isGameFinished, 'O')
     } else if (
-      button1 === 'X' && button2 === 'X' && button3 === 'X' ||
-      button1 === 'X' && button4 === 'X' && button7 === 'X' ||
-      button1 === 'X' && button5 === 'X' && button9 === 'X' ||
-      button2 === 'X' && button5 === 'X' && button8 === 'X' ||
-      button3 === 'X' && button6 === 'X' && button9 === 'X' ||
-      button3 === 'X' && button5 === 'X' && button7 === 'X' ||
-      button4 === 'X' && button5 === 'X' && button6 === 'X' ||
-      button7 === 'X' && button8 === 'X' && button9 === 'X' 
+      (button1 === 'X' && button2 === 'X' && button3 === 'X') ||
+      (button1 === 'X' && button4 === 'X' && button7 === 'X') ||
+      (button1 === 'X' && button5 === 'X' && button9 === 'X') ||
+      (button2 === 'X' && button5 === 'X' && button8 === 'X') ||
+      (button3 === 'X' && button6 === 'X' && button9 === 'X') ||
+      (button3 === 'X' && button5 === 'X' && button7 === 'X') ||
+      (button4 === 'X' && button5 === 'X' && button6 === 'X') ||
+      (button7 === 'X' && button8 === 'X' && button9 === 'X') 
     ) {
       setIsGameFinished(true);
       displayTextSetter(player, isGameStarted, isGameFinished, 'X')
